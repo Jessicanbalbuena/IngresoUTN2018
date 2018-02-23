@@ -5,26 +5,29 @@ function Mostrar()
 	// declarar variables
 	
 	var respuesta='si';
-	var numero; 
-	var acumulador=0;
 	var contador=0;
-	var positivo;
-	var negativo;
-	var respuesta;
+	var min;
+	var max;
 	
 	do {
 		 numero = parseInt(prompt("Ingrese un numero"));
-      acumulador = acumulador + numero;
-	  contador = contador + 1;
-	  respuesta =  prompt("Desea continuar? si/no?");
-	}while(respuesta!='no');
-	
-	
-	
-	 	promedio = acumulador/contador;
+	  contador ++ ;
+	  
+	if(contador == 1)
+	  { min = numero;
+	max = numero;
+     }
+	if(numero >min)
+	{ min = numero;
+	}
+	if(numero > max)
+	{ max= numero;}
 
-document.getElementById('suma').value=acumulador;
-document.getElementById('promedio').value=acumulador/promedio;
+	 respuesta =  prompt("Desea continuar? si/no?");
+	  }
+	 	while(respuesta == "si");
+document.getElementById('maximo').value=max;
+document.getElementById('minimo').value=min; 
 	
 		
 	
